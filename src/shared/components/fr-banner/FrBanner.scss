@@ -1,0 +1,9 @@
+@import "../../../scss/variables";
+.banner {
+    // background: url(https://static.interbankbenefit.pe/public/web/images/evento/banner/canje_mixto_destop_banner_benefit_22.01.gif) no-repeat center center;
+    background: url(https://www.mindstask.com/en/wp-content/uploads/2020/08/frontendSmallBanner.jpg) no-repeat center center;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    border-top: 5px solid $primary;
+}
