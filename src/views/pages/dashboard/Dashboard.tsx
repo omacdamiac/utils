@@ -1,29 +1,24 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment } from "react";
 import "./Dashboard.scss";
 import FrTable from "../../../shared/components/fr-table/FrTable";
 import { API_BASE, GET_TIPS } from "../../../lib/endpoint.const";
-import axios from "axios";
+import { useFetch } from "../../../shared/services/useFetch";
 
 export const Dashboard = (): any => {
-  const [tips, setTips]: any = useState([]);
+  let url = API_BASE + GET_TIPS;
+  const { tips, loader } = useFetch(url);
 
-  const getTips = () => {
-    let url = API_BASE + GET_TIPS;
-    axios.get(url).then((res: any) => {
-      console.log(res?.data[0])
-      
-      setTips(res?.data[0])});
-  };
-  useEffect(() => {
-    getTips();
-  }, []);
   return (
     <Fragment>
-      {
-        tips ?
-        <FrTable  key={tips?.id} data={tips} />
-        : <span>No hay registros</span>
-      }
+      {loader && <p>Loading...</p>}
+      <FrTable key={tips?.id} data={tips} />
     </Fragment>
+    //   <Fragment>
+    //   {tips ? (
+    //     <FrTable key={tips?.id} data={tips} />
+    //   ) : (
+    //     <span>No hay registros</span>
+    //   )}
+    // </Fragment>
   );
 };
