@@ -11,7 +11,7 @@ return (
   <Fragment>
     <FrModal comentario={comentario} />
       <div className="content">
-        <h2>{data.table_title}</h2>
+        <h2>{data?.table_title}</h2>
         <div className="content__table">
           <table className="table table-hover">
             <thead>

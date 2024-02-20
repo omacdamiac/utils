@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_BASE, GET_TIPS } from "../../lib";
 
-export function useFetch(url: string) {
-  const [tips, setTips]: any = useState([]);
-  const [loader, setLoader]: any = useState(true);
+export function useFetch() {
+  const [tips, setTips] = useState(null);
+  const [loader, setLoader] = useState(true);
 
-  const getTips = () => {
+  useEffect(() => {
     setLoader(true);
-    // let url = API_BASE + GET_TIPS;
-    axios.get(url).then((res: any) => {
-      //   console.log(res?.data[0]);
+    axios.get(API_BASE + GET_TIPS).then((res: any) => {
       setLoader(false);
       setTips(res?.data[0]);
     });
-  };
-  useEffect(() => {
-    getTips();
-  },[]);
+  }, []);
 
   return { tips, loader };
 }

@@ -28,7 +28,7 @@ const FrModal = (props: any) => {
               ></button>
             </div>
             <div className="modal-body bg-light">
-              {props?.comentario?.map((d: any, i: number) => d?.estado == NUMBER_STATE_SHOW && (
+              {props?.comentario?.map((d: any, i: number) => d?.estado === NUMBER_STATE_SHOW && (
                 <div className="card" key={d?.id}>
                   <strong>{d?.avatar}</strong>
                   <p>{d?.comment}</p>
