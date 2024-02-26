@@ -1,4 +1,5 @@
 @import "./scss/variables";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 body {
   font-size: $base;
@@ -11,8 +12,13 @@ body {
 }
 
 code {
+  text-align: left;
+  display: block;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  border: 2px solid #e6e8ec;
+  padding: 0 15px;
+  border-radius: 7px;
 }
 header {
   .header {
@@ -24,10 +30,15 @@ header {
     li {
       display: inline-block;
       a {
-        color: $accent;
+        color: $secundary;
+        text-decoration: underline;
         margin: 0 10px;
-        text-decoration: none;
         font-size: 0.875rem;
+      }
+      span {
+        font-size: 0.875rem;
+        border-right: 1px solid $primary;
+        padding-right: 10px;
       }
     }
   }

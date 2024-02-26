@@ -7,6 +7,9 @@ export const FrMain = () => {
     <>
       <ul>
         <li>
+          <span>¡Eres bienvenido a disfrutar y compartir! </span>
+        </li>
+        <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
@@ -14,6 +17,9 @@ export const FrMain = () => {
         </li>
         <li>
           <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link className="login" to="/home">Iniciar sesión</Link>
         </li>
       </ul>
     </>

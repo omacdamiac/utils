@@ -1,0 +1,54 @@
+strong {
+  color: green;
+  &:hover {
+    cursor: pointer;
+    color: rgb(214, 214, 100);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #ee1854!important;
+  font-size: 60px;
+  font-family: "Bebas Neue", sans-serif;
+}
+.tags {
+  font-size: 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: black;
+  margin-right: 3px;
+  span {
+    &:first-child {
+      margin-left: 5px;
+    }
+    &:after {
+      content: ",";
+      margin-right: 3px;
+    }
+    &:last-child:after {
+      content: ".";
+    }
+  }
+}
+.img__comentario {
+  background: url("/assets/fondo.jpg") no-repeat top center;
+  display: block;
+  width: 100%;
+  height: 720px;
+}
+.article {
+  text-align: center;
+  margin : 20px 0;
+  p {
+    text-align: justify;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  pre {
+    width: 100%;
+  }
+}

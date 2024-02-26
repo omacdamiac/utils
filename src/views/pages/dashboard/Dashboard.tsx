@@ -8,8 +8,14 @@ export const Dashboard = (): any => {
 
   return (
     <Fragment>
-      {loader && <p>Loading...</p>}
-      <FrTable key={'1'} data={tips} />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            {loader && <p>Loading...</p>}
+            <FrTable key={"1"} data={tips} />
+          </div>
+        </div>
+      </div>
     </Fragment>
   );
 };

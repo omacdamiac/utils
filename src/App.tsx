@@ -10,15 +10,15 @@ import Details from "./views/pages/details/details";
 function App() {
   return (
     <>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="about" element={<About />} />
-            <Route path="home" element={<Home />} />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="details" element={<Details />} />
-            <Route path="*" element={<Dashboard />} />
-          </Route>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="about" element={<About />} />
+          <Route path="home" element={<Home />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="details" element={<Details />} />
+          <Route path="*" element={<Dashboard />} />
+        </Route>
+      </Routes>
     </>
   );
 }

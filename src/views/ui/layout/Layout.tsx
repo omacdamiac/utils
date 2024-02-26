@@ -20,15 +20,9 @@ const Layout = () => {
         </div>
       </header>
       <FrNavBar></FrNavBar>
-      <FrBanner></FrBanner>
+      {/* <FrBanner></FrBanner> */}
       <section className="bg__grays">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
               <Outlet />
-            </div>
-          </div>
-        </div>
       </section>
     </Fragment>
   );

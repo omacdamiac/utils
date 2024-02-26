@@ -5,9 +5,36 @@
 .logo {
   &:before {
     content: "frontal";
+    font-size: 1.625rem;
+    font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: -1px;
+    letter-spacing: 3px;
     color: $secundary;
+  }
+  &:after {
+    content: "★";
+    font-size: 1.625rem;
+  }
+}
+a {
+  text-decoration: none;
+}
+.apoyo {
+  &__span {
+    cursor: pointer;
+  }
+  &__span ~ &__yape {
+    display: none;
+  }
+  &__yape:hover,
+  &__span:hover ~ &__yape {
+    display: block;
+    width: 225px;
+    top: 24px;
+    right: 0;
+    height: 225px;
+    border-radius: 10px;
+    overflow: hidden;
   }
 }
