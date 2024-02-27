@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './FrButton.scss';
 
-const FrButton = ({text}:{text:string}) => {
+export const FrButton = ({text}:{text:string}) => {
     
   return (
     <Fragment>
@@ -9,5 +9,3 @@ const FrButton = ({text}:{text:string}) => {
     </Fragment>
   )
 }
-
-export default FrButton

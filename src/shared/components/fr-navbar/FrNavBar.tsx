@@ -2,18 +2,20 @@ import React, { Fragment } from "react";
 import "./FrNavBar.scss";
 import { Link } from "react-router-dom";
 
-const FrNavBar = () => {
+export const FrNavBar = () => {
   return (
     <Fragment>
       <div className="container">
         <div className="row align-items-center my-4">
           <div className="col-md-3 text-center">
             <Link to="/dashboard">
-              <span className="logo"></span>
+              <span className="logo logo__hidden"></span>
             </Link>
           </div>
           <div className="col-md-6">
-            <input type="text" className="form-control" />
+            <div className="input-group input-group-lg">
+              <input type="text" className="form-control"  placeholder="Buscar tip"/>
+            </div>
           </div>
           <div className="col-md-3 text-end position-relative">
             <span className="apoyo__span">¡Puedes apoyarnos!</span>
@@ -30,5 +32,3 @@ const FrNavBar = () => {
     </Fragment>
   );
 };
-
-export default FrNavBar;

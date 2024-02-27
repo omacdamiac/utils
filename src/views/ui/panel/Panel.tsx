@@ -1,9 +1,7 @@
 import React from 'react'
 
-const Panel = () => {
+export const Panel = () => {
   return (
     <div>Panel</div>
   )
 }
-
-export default Panel

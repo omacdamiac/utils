@@ -3,7 +3,7 @@ import "./FrModal.scss";
 import { NUMBER_STATE_SHOW } from "../../../lib";
 import { formatDate } from "../../utils/utils";
 
-const FrModal = (props: any) => {
+export const FrModal = (props: any) => {
   console.log(props);
 
   return (
@@ -55,4 +55,3 @@ const FrModal = (props: any) => {
   );
 };
 
-export default FrModal;

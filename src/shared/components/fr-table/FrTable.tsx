@@ -1,10 +1,18 @@
 import React, { Fragment, useState } from "react";
 import "./FrTable.scss";
-import FrModal from "../fr-modal/FrModal";
 import { Link } from "react-router-dom";
 import { TEXT_ZERO, TYPE_INPUT, TYPE_SELECT } from "../../../lib";
+import { FrModal } from "../fr-modal/FrModal";
+import { useTable } from "../../../core/services";
+import { ITIPS } from "../../../core/models";
 
-const FrTable = ({ data }: { data: any }) => {
+export const FrTable = ({ data }: { data: ITIPS[] }) => {
+  // console.log(data);
+  
+  const { theaders, load } = useTable();
+
+  const { table_headers, table_title } = theaders;
+
   const [search, setSearch] = useState(TEXT_ZERO);
   const [typeSearch, setTypeSearch] = useState(TYPE_INPUT);
   const [comentario, setComentario] = useState();
@@ -31,7 +39,7 @@ const FrTable = ({ data }: { data: any }) => {
     <Fragment>
       <FrModal comentario={comentario} />
       <div className="content">
-        <h2>{data?.table_title}</h2>
+        <h2>{table_title}</h2>
         <div className="row">
           <div className="col-6">
             <input
@@ -58,13 +66,15 @@ const FrTable = ({ data }: { data: any }) => {
               <option value="test">test</option>
             </select>
           </div>
+          <div className="clearfix"></div>
         </div>
         <br></br>
         <div className="content__table table-responsive">
+          {load && <p>Cargando...</p>}
           <table className="table table-hover">
             <thead>
               <tr>
-                {data?.table_headers?.map((header: string, i: number) => (
+                {table_headers?.map((header: string, i: number) => (
                   <th key={i} scope="col">
                     {header}
                   </th>
@@ -72,7 +82,7 @@ const FrTable = ({ data }: { data: any }) => {
               </tr>
             </thead>
             <tbody>
-              {data?.data?.filter(filtro).map((bo: any, i: any) => (
+              {data.filter(filtro).map((bo: any, i: any) => (
                 <tr key={i.toString()}>
                   <td className="px-2 py-2">
                     <div>
@@ -157,5 +167,3 @@ const FrTable = ({ data }: { data: any }) => {
     </Fragment>
   );
 };
-
-export default FrTable;

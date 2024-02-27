@@ -1,6 +1,30 @@
 @import "/src/scss/variables";
 .login {
-    color: $primary;
-    text-decoration: underline;
-    font-weight: normal;
+  color: $primary;
+  text-decoration: underline;
+  font-weight: normal;
+}
+@media (max-width: 768px) {
+  ul {
+    li {
+      line-height: 40px;
+      a {
+        font-size: 1.3rem !important;
+        border-top: 1px solid white;
+        border-bottom: 1px solid $border;
+        display: block;
+        text-decoration: none !important;
+        padding: 10px;
+      }
+      span {
+        display: none;
+      }
+      .login {
+        background: $primary;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+      }
+    }
+  }
 }

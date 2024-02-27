@@ -10,13 +10,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.spacer {
+  flex: 1 1 auto;
+}
 code {
   text-align: left;
   display: block;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  border: 2px solid #e6e8ec;
+  border: 2px solid $border;
   padding: 0 15px;
   border-radius: 7px;
 }

@@ -7,7 +7,7 @@ const initialForm = {
   comment: "comentario",
 };
 
-const Details = () => {
+export const Details = () => {
   let { state } = useLocation();
   const [initialState, setInitialState] = useState(initialForm);
   const { title, comment } = initialState;
@@ -115,6 +115,7 @@ export class AppModule {}
               />
               <hr />
               <label htmlFor="comment">Comentario</label>
+
               <textarea
                 name="comment"
                 value={comment}
@@ -131,4 +132,3 @@ export class AppModule {}
     </Fragment>
   );
 };
-export default Details;

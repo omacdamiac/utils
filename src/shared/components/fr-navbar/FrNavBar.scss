@@ -1,7 +1,5 @@
 @import "/src/scss/variables";
-.example-spacer {
-  flex: 1 1 auto;
-}
+
 .logo {
   &:before {
     content: "frontal";
@@ -15,8 +13,18 @@
   &:after {
     content: "★";
     font-size: 1.625rem;
+    color: $primary;
+  }
+  &.navbar-toggler{
+    border: 0;
+  }
+  @media (max-width: 768px) {
+    &__hidden {
+      display: none;
+    }
   }
 }
+
 a {
   text-decoration: none;
 }

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import "./FrBanner.scss";
 
-const FrBanner = () => {
+export const FrBanner = () => {
   return (
     <Fragment>
       <div className="banner">
@@ -10,5 +10,3 @@ const FrBanner = () => {
     </Fragment>
   )
 }
-
-export default FrBanner
