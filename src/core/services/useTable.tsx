@@ -3,13 +3,10 @@ import axios from "axios";
 import { API_BASE, GET_TABLE } from "../../lib";
 import { IHEAD } from "../models";
 const initialHeader = {
-    table_headers: [],
-    table_title: ''
-}
-// interface IHEAD {
-//     table_headers: any[]
-//     table_title: string
-//   }
+  table_headers: [],
+  table_title: "",
+};
+
 export function useTable() {
   const [theaders, setTheaders] = useState<IHEAD>(initialHeader);
   const [load, setLoad] = useState(true);

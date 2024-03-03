@@ -1,8 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { FrNavBar, Header } from "../../../shared/components";
 
 export const Layout = () => {
+  const [caracteres, setCaracteres] = useState(); // recibe data de navBar
+  // console.log(caracteres);
+  // const [text, setText] = useState();        //Envia data al OutLet
   return (
     <Fragment>
       <header className="text-end">
@@ -18,10 +21,15 @@ export const Layout = () => {
           </div>
         </div>
       </header>
-      <FrNavBar></FrNavBar>
+      <p>{caracteres}</p>
+      <FrNavBar
+        caracteres={caracteres}
+        setCaracteres={setCaracteres}
+      ></FrNavBar>
       {/* <FrBanner></FrBanner> */}
       <section className="bg__grays">
-        <Outlet />
+        <Outlet context={caracteres} />
+        {/* <Outlet /> */}
       </section>
     </Fragment>
   );

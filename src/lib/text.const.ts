@@ -4,3 +4,4 @@ export const TEXT_ZERO = '';
 // FR-TABLE
 export const TYPE_INPUT = 'INPUT';
 export const TYPE_SELECT = 'SELECT';
+export const NOT_SEARCH = -1;

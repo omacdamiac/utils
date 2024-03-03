@@ -38,7 +38,7 @@
         }
       }
       tbody {
-        background: green;
+        background: white;
 
         td {
           color: #4b5563;
@@ -47,6 +47,9 @@
           vertical-align: middle;
           &:nth-child(2) {
             min-width: 300px;
+            @media (max-width: 767px) {
+              min-width: 100%;
+            }
             p {
               width: 300px;
               overflow: hidden;
@@ -55,6 +58,9 @@
               -webkit-line-clamp: 2;
               -webkit-box-orient: vertical;
               margin: 0;
+              @media (max-width: 767px) {
+                width: 100%;
+              }
             }
           }
           span {
@@ -64,8 +70,12 @@
             margin-right: 3px;
             text-transform: capitalize;
             padding: 1px 5px;
-            font-size: 11px;
+            font-size: 0.6875rem;
             letter-spacing: 1px;
+            @media (max-width: 767px) {
+              font-size: 1rem;
+              text-transform: capitalize;
+            }
           }
           div {
             & > svg {
@@ -78,6 +88,10 @@
               margin-bottom: 0;
               &::first-letter {
                 text-transform: capitalize;
+              }
+              @media (max-width: 767px) {
+                font-size: 1.25rem;
+                margin-bottom: 4px;
               }
             }
             h4 {
@@ -93,7 +107,7 @@
             background: #e3fcef;
             color: #23bf8b;
             border-radius: 9999px;
-            font-size: 12px;
+            font-size: 0.75rem;
             padding: 3px 10px;
             margin-right: 3px;
           }
@@ -111,5 +125,49 @@
 }
 
 .form-select {
-  border: 1px solid $border!important;
+  border: 1px solid $border !important;
+}
+
+///////// TABLE RESPONSIVE
+@media (max-width: 767px) {
+  .responsive-table thead {
+    display: none; /* Oculta los encabezados en dispositivos móviles */
+  }
+
+  .responsive-table tr {
+    margin-bottom: 0.625em;
+    display: block;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .responsive-table td {
+    display: block;
+    //  text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .responsive-table td::before {
+    //  content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  td {
+    // width: 49%;
+    // margin: 1px;
+    &.head {
+      width: 100%;
+      // & ~ td {
+      //   display: none;
+      // }
+      & ~ td {
+        display: inline-block;
+      }
+    }
+  }
 }

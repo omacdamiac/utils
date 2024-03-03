@@ -4,8 +4,6 @@ import { NUMBER_STATE_SHOW } from "../../../lib";
 import { formatDate } from "../../utils/utils";
 
 export const FrModal = (props: any) => {
-  console.log(props);
-
   return (
     <Fragment>
       <div
